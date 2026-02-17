@@ -1,0 +1,12 @@
+.main {
+  background-color: linen;
+  min-width: 100vw;
+  min-height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.title {
+  font-size: 1.5rem;
+}
