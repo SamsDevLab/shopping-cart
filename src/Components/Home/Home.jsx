@@ -1,11 +1,10 @@
-import styles from "./home.module.css";
+import { Outlet } from "react-router";
 
 const Home = () => {
   return (
-    <main>
-      <h1 className={styles.home}>Home Page</h1>
-      <p className={styles.dank}>Dank</p>
-    </main>
+    <div className="home-div">
+      <h2 className="home">Home, bro. Home.</h2>
+    </div>
   );
 };
 
