@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 
 function App() {
   return (
-    <body>
+    <>
       <header>
         <h1>Sam's Great Outdoors</h1>
         <nav>
@@ -42,16 +42,17 @@ function App() {
         <div className="contact-info">
           <h2>Contact Us</h2>
           <div className="email">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
             <h3>Email: justgonnasendit@fakecompany.com</h3>
           </div>
           <div className="phone">
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
             <h3>Phone: 555.555.5555</h3>
           </div>
         </div>
       </footer>
-    </body>
+    </> // Turn this into a fragment when you return (console.log error)
+    // and place the body styling in the index.css file
   );
 }
 
