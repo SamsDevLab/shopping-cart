@@ -1,10 +1,13 @@
-import { Outlet } from "react-router";
+import styles from "./Home.module.css";
 
 const Home = () => {
   return (
-    <div className="home-div">
-      <h2 className="home">Home, bro. Home.</h2>
-    </div>
+    // Start here tomorrow (02/18 - Figure out a layout plan for component and decide what
+    // you want to include
+    <>
+      <h2 className={styles.homeHeader}>Greetings from Sam's Shop</h2>
+      <p>Welcome to the shop-a-thon!</p>
+    </>
   );
 };
 

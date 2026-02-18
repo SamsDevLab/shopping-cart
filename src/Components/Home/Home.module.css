@@ -1,7 +1,4 @@
-.home {
-  color: pink;
-}
-
-.dank {
-  color: lime;
+.homeHeader {
+  color: #2b2b2b;
+  font-size: 4rem;
 }
