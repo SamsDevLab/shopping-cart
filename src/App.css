@@ -4,6 +4,7 @@ body {
   justify-content: center;
   min-width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 header {
@@ -28,5 +29,19 @@ nav {
 main {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 2rem;
+}
+
+footer {
+  background-color: #e7e1d6;
+  min-width: 100vw;
+  min-height: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.all-links {
+  display: flex;
+  flex-direction: column;
 }
