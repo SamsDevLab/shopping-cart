@@ -27,6 +27,7 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font-family: "Work Sans";
 }
 
 p,
@@ -34,6 +35,7 @@ li,
 figcaption {
   text-wrap: pretty;
   max-width: 65ch;
+  font-family: "Lora";
 }
 
 img,
@@ -49,4 +51,24 @@ textarea,
 button,
 select {
   font: inherit;
+  font-family: "Lora";
+}
+@font-face {
+  font-family: "Work Sans";
+  src:
+    url("./assets/fonts/WorkSans-Regular.woff2") format("woff2"),
+    url("./assets/fonts/WorkSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src:
+    url("./assets/fonts/Lora-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Lora-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
