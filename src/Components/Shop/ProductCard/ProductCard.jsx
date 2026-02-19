@@ -5,9 +5,16 @@ const ProductCard = () => {
     <div className={styles.cardContainer}>
       <h2>Patagonia Jacket</h2>
       <div>
-        <h3>Quantity</h3>
+        <label class={styles.inputLabel} htmlFor="quantity">
+          Quantity
+        </label>
         <button>–</button>
-        {/* <input type="text" /> */}
+        <input
+          type="number"
+          id="quantity"
+          class={styles.quantityInput}
+          value="0"
+        />
         <button>+</button>
       </div>
       <button>Add to Cart</button>

@@ -1,5 +1,32 @@
 .cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
   min-height: 15rem;
   max-width: 15rem;
   background-color: #e7e1d6;
+  border-radius: 0.3rem;
+  padding: 1rem;
 }
+
+.inputLabel {
+  display: block;
+}
+
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: number;
+}
+
+/*
+The above solution with Firefox hides spinner arrows 
+but Gecko still allows users to input letters.
+May have to fix in post..
+*/
