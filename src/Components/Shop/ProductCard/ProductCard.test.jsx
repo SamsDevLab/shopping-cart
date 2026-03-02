@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ProductCard from "./ProductCard";
@@ -39,12 +39,12 @@ describe("ProductCard", () => {
 
     const input = screen.getByRole("spinbutton", { name: "Quantity" });
 
+    await user.clear(input);
     await user.type(input, "2");
 
-    expect(input).toHaveValue(Number("12"));
+    expect(input).toHaveValue(Number("2"));
   });
 
-  // Start here Monday - figure out how to test for the blur event and parse the numbers
   it("should leave the typed input number after blur event", async () => {
     render(<ProductCard />);
     const user = userEvent.setup();
@@ -59,5 +59,16 @@ describe("ProductCard", () => {
 
     expect(input).not.toHaveFocus();
     expect(input).toHaveValue(Number("23"));
+  });
+
+  it("should change text to 'Adding to Cart...'", async () => {
+    render(<ProductCard />);
+    const user = userEvent.setup();
+
+    const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
+
+    await user.click(addToCartBtn);
+
+    expect(addToCartBtn).toHaveTextContent("Added to Cart");
   });
 });

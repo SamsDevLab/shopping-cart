@@ -3,6 +3,7 @@ import styles from "./ProductCard.module.css";
 
 const ProductCard = () => {
   const [inputValue, setInputValue] = useState(1);
+  const [addToCartStr, setAddToCartStr] = useState("Add to Cart");
 
   const handleDecrementChange = () => {
     if (!(inputValue <= 1)) setInputValue(inputValue - 1);
@@ -11,14 +12,6 @@ const ProductCard = () => {
   const handleIncrementChange = () => {
     if (inputValue >= 1 && inputValue < 99) setInputValue(inputValue + 1);
   };
-
-  /* 
-  Edge cases to address: 
-  • Can add (multiple) 0s -before- the number
-  • Can add a decimal after the first number
-  • May be able to handle this with a blur event or adding to the cart - or both
-  • Separate edge case: when you backspace in the input it will result in 0 rather than a blank space
-  */
 
   const handleInputChange = (event) => {
     const newNum = Number(event.target.value);
@@ -30,6 +23,10 @@ const ProductCard = () => {
     const newNumber = Number(event.target.value);
 
     setInputValue(newNumber);
+  };
+
+  const handleAddToCartMsg = () => {
+    setAddToCartStr("Added to Cart");
   };
 
   return (
@@ -53,9 +50,17 @@ const ProductCard = () => {
         />
         <button onClick={handleIncrementChange}>+</button>
       </div>
-      <button>Add to Cart</button>
+      <button onClick={handleAddToCartMsg}>{addToCartStr}</button>
     </div>
   );
 };
 
 export default ProductCard;
+/* 
+  Edge cases to address: 
+  • Can add (multiple) 0s -before- the number
+  • Can add a decimal after the first number
+  • May be able to handle this with a blur event or adding to the cart - or both
+  • Separate edge case: when you backspace in the input it will result in 0 rather than a blank space
+
+  */
