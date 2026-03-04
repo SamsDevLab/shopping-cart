@@ -1,7 +1,14 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
 
-const ProductCard = () => {
+const ProductCard = ({
+  title,
+  price,
+  description,
+  category,
+  image,
+  rating,
+}) => {
   const [inputValue, setInputValue] = useState(1);
   const [addToCartStr, setAddToCartStr] = useState("Add to Cart");
 
@@ -30,8 +37,15 @@ const ProductCard = () => {
   };
 
   return (
-    <div className={styles.cardContainer}>
-      <h2>Patagonia Jacket</h2>
+    <div data-testid="product-card" className={styles.cardContainer}>
+      <img src={image.url} alt={image.alt} />
+      <h2>{title}</h2>
+      <h3>{price}</h3>
+      <h4>{category}</h4>
+      <p>{description}</p>
+      <p>
+        {rating.rate}/5 from {rating.count} reviews
+      </p>
       <div>
         <label className={styles.inputLabel} htmlFor="quantity">
           Quantity
@@ -62,5 +76,5 @@ export default ProductCard;
   • Can add a decimal after the first number
   • May be able to handle this with a blur event or adding to the cart - or both
   • Separate edge case: when you backspace in the input it will result in 0 rather than a blank space
-
+  • Will need to write tests for these as well
   */
