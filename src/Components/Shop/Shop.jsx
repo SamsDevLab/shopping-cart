@@ -12,6 +12,7 @@ const Shop = ({ shopObjArr }) => {
             price={shopItem.price}
             description={shopItem.description}
             category={shopItem.category}
+            image={shopItem.image}
             rating={shopItem.rating}
           />
         );
