@@ -1,8 +1,24 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { Outlet } from "react-router";
 
 function App() {
+  const [productList, setProductList] = useState({});
+
+  useEffect(() => {
+    const fetchedResults = (async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+        return response.json();
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+
+    fetchedResults.then((response) => setProductList(response));
+  }, []);
+
   return (
     <>
       <header>
@@ -20,7 +36,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet />
+        <Outlet {...productList} />
       </main>
       <footer>
         <div className="title-and-mission">
@@ -57,3 +73,16 @@ function App() {
 }
 
 export default App;
+
+// useEffect(() => {
+//   const fetchedData = (async () => {
+//     try {
+//       const response = await fetch("https://fakestoreapi.com/products");
+//       return response.json();
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   })();
+
+//   fetchedData.then((response) => setProductList(response));
+// }, []);
