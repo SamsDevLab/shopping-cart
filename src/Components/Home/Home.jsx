@@ -14,20 +14,22 @@ const Home = () => {
     <>
       <h2 className={styles.homeHeader}>Greetings from Sam's Shop</h2>
       <p>Top Rated Items</p>
-      {favoriteItems.map((item) => {
-        return (
-          <ProductCard
-            data-testid="product-card"
-            key={item.id}
-            title={item.title}
-            price={item.price}
-            description={item.description}
-            category={item.category}
-            image={item.image}
-            rating={item.rating}
-          />
-        );
-      })}
+      <div data-testid="home-card-container">
+        {favoriteItems.map((item) => {
+          return (
+            <ProductCard
+              data-testid="product-card"
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              description={item.description}
+              category={item.category}
+              image={item.image}
+              rating={item.rating}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

@@ -19,19 +19,6 @@ function App() {
     fetchedResults.then((response) => setProductList(response));
   }, []);
 
-  // console.log(productList);
-
-  /* 
-  Start here tomorrow 03/06
-  • Need to figure out how to dynamically pass in productList props to Outlet
-  component using the context feature. 
-  • Also need to pass in a function similar to the one below to ensure that child
-  components can update the Product List (need to be able to include Cart: added
-  or something similar to ensure that Cart only has items with that distinction)
-  • Need to be able to dynamically pass this data so that comps like Home and
-  Cart only get certain items
-  */
-
   return (
     <>
       <header>
