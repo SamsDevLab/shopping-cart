@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { Outlet } from "react-router";
 
 function App() {
-  const [productList, setProductList] = useState({});
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     const fetchedResults = (async () => {
@@ -18,6 +18,19 @@ function App() {
 
     fetchedResults.then((response) => setProductList(response));
   }, []);
+
+  // console.log(productList);
+
+  /* 
+  Start here tomorrow 03/06
+  • Need to figure out how to dynamically pass in productList props to Outlet
+  component using the context feature. 
+  • Also need to pass in a function similar to the one below to ensure that child
+  components can update the Product List (need to be able to include Cart: added
+  or something similar to ensure that Cart only has items with that distinction)
+  • Need to be able to dynamically pass this data so that comps like Home and
+  Cart only get certain items
+  */
 
   return (
     <>
@@ -36,7 +49,7 @@ function App() {
         </nav>
       </header>
       <main>
-        <Outlet {...productList} />
+        <Outlet context={[productList, setProductList]} />
       </main>
       <footer>
         <div className="title-and-mission">
@@ -67,22 +80,8 @@ function App() {
           </div>
         </div>
       </footer>
-    </> // Turn this into a fragment when you return (console.log error)
-    // and place the body styling in the index.css file
+    </>
   );
 }
 
 export default App;
-
-// useEffect(() => {
-//   const fetchedData = (async () => {
-//     try {
-//       const response = await fetch("https://fakestoreapi.com/products");
-//       return response.json();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   })();
-
-//   fetchedData.then((response) => setProductList(response));
-// }, []);

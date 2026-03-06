@@ -1,19 +1,22 @@
-import ProductCard from "./ProductCard/ProductCard.jsx";
+import ProductCard from "../ProductCard/ProductCard.jsx";
+import { useOutletContext } from "react-router";
 
-const Shop = ({ shopObjArr }) => {
+const Shop = () => {
+  const [productList, setProductList] = useOutletContext();
+
   return (
     <div data-testid="card-container">
-      {shopObjArr.map((shopItem) => {
+      {productList.map((item) => {
         return (
           <ProductCard
             data-testid="product-card"
-            key={shopItem.id}
-            title={shopItem.title}
-            price={shopItem.price}
-            description={shopItem.description}
-            category={shopItem.category}
-            image={shopItem.image}
-            rating={shopItem.rating}
+            key={item.id}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+            category={item.category}
+            image={item.image}
+            rating={item.rating}
           />
         );
       })}
