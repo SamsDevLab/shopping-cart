@@ -16,8 +16,21 @@ function App() {
       }
     })();
 
-    fetchedResults.then((response) => setProductList(response));
+    fetchedResults.then((response) => {
+      const newArr = response.map((product) => {
+        const newObj = {
+          ...product,
+          addedToCart: false,
+          quantity: 1,
+        };
+        return newObj;
+      });
+
+      setProductList(newArr);
+    });
   }, []);
+
+  // console.log(productList);
 
   return (
     <>
