@@ -20,18 +20,9 @@ const mockObj = {
   },
 };
 
-describe("Product Card", () => {
+describe("ProductCard", () => {
   it("should change text to 'Adding to Cart...'", async () => {
-    render(
-      <ProductCard
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
-    );
+    render(<ProductCard props={mockObj} />);
     const user = userEvent.setup();
 
     const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
@@ -42,16 +33,7 @@ describe("Product Card", () => {
   });
 
   it("should render all product information e.g. title, price, etc.", () => {
-    render(
-      <ProductCard
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
-    );
+    render(<ProductCard props={mockObj} />);
 
     const title = screen.getByRole("heading", {
       name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -73,7 +55,9 @@ describe("Product Card", () => {
     const category = screen.getByRole("heading", { name: "men's clothing" });
     expect(category).toHaveTextContent("men's clothing");
 
-    const image = screen.getByRole("img", { name: "Foldsack" });
+    const image = screen.getByRole("img", {
+      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    });
     expect(image).toBeInTheDocument();
 
     const rating = screen.getByText("3.9/5 from 120 reviews");
