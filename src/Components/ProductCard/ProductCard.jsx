@@ -2,14 +2,7 @@ import { useState } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector.jsx";
 import styles from "./ProductCard.module.css";
 
-const ProductCard = ({
-  title,
-  price,
-  description,
-  category,
-  image,
-  rating,
-}) => {
+const ProductCard = ({ props }) => {
   const [addToCartStr, setAddToCartStr] = useState("Add to Cart");
 
   const handleAddToCartMsg = () => {
@@ -18,13 +11,13 @@ const ProductCard = ({
 
   return (
     <div data-testid="product-card" className={styles.cardContainer}>
-      <img src={image.url} alt={image.alt} />
-      <h2>{title}</h2>
-      <h3>{price}</h3>
-      <h4>{category}</h4>
-      <p>{description}</p>
+      <img src={props.image} alt={props.title} />
+      <h2>{props.title}</h2>
+      <h3>{props.price}</h3>
+      <h4>{props.category}</h4>
+      <p>{props.description}</p>
       <p>
-        {rating.rate}/5 from {rating.count} reviews
+        {props.rating.rate}/5 from {props.rating.count} reviews
       </p>
       <QuantitySelector />
       <button onClick={handleAddToCartMsg}>{addToCartStr}</button>

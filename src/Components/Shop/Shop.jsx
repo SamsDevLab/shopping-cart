@@ -7,17 +7,12 @@ const Shop = () => {
   return (
     <>
       <div data-testid="card-container">
-        {productList.map((item) => {
+        {productList.map((product) => {
           return (
             <ProductCard
               data-testid="product-card"
-              key={item.id}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              category={item.category}
-              image={item.image}
-              rating={item.rating}
+              key={product.id}
+              props={product}
             />
           );
         })}

@@ -4,7 +4,7 @@ import { useOutletContext } from "react-router";
 
 const Home = () => {
   const [productList, setProductList] = useOutletContext();
-  const favoriteItems = productList.filter((product) => {
+  const favoriteProducts = productList.filter((product) => {
     if (product.rating.rate >= 4.5) {
       return product;
     }
@@ -15,17 +15,12 @@ const Home = () => {
       <h2 className={styles.homeHeader}>Greetings from Sam's Shop</h2>
       <p>Top Rated Items</p>
       <div data-testid="home-card-container">
-        {favoriteItems.map((item) => {
+        {favoriteProducts.map((product) => {
           return (
             <ProductCard
               data-testid="product-card"
-              key={item.id}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              category={item.category}
-              image={item.image}
-              rating={item.rating}
+              key={product.id}
+              props={product}
             />
           );
         })}
