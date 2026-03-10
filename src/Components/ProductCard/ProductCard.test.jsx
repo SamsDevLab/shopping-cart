@@ -1,28 +1,44 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { MemoryRouter, Routes, Route, Outlet } from "react-router";
 import userEvent from "@testing-library/user-event";
-import ProductCard from "./ProductCard";
+import Shop from "../Shop/Shop";
 
-const mockObj = {
-  id: 1,
-  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  price: 109.95,
-  description:
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  category: "men's clothing",
-  image: {
-    url: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-    alt: "Foldsack",
-  },
-  rating: {
-    rate: 3.9,
-    count: 120,
-  },
+const mockObjArr = [
+  [
+    {
+      id: 1,
+      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      price: 109.95,
+      description:
+        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      category: "men's clothing",
+      image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+      rating: {
+        rate: 3.9,
+        count: 120,
+      },
+      addedToCart: false,
+    },
+  ],
+];
+
+const Wrapper = () => {
+  return <Outlet context={mockObjArr} />;
 };
 
 describe("ProductCard", () => {
-  it("should change text to 'Adding to Cart...'", async () => {
-    render(<ProductCard props={mockObj} />);
+  it("should change text to 'Added to Cart...'", async () => {
+    render(
+      <MemoryRouter initialEntries={["/shop"]}>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route path="shop" element={<Shop />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
+    );
+
     const user = userEvent.setup();
 
     const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
@@ -33,7 +49,15 @@ describe("ProductCard", () => {
   });
 
   it("should render all product information e.g. title, price, etc.", () => {
-    render(<ProductCard props={mockObj} />);
+    render(
+      <MemoryRouter initialEntries={["/shop"]}>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route path="shop" element={<Shop />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
+    );
 
     const title = screen.getByRole("heading", {
       name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
