@@ -7,20 +7,16 @@ const ProductCard = ({ props }) => {
   const [addToCartStr, setAddToCartStr] = useState("Add to Cart");
   const [productList, setProductList] = useOutletContext();
 
-  // console.log(props);
-
   const handleAddingToCart = () => {
     setAddToCartStr("Added to Cart");
-    // const newObjArr = productList.map((product) => {
-    //   if (product.id === props.id) {
-    //     return { ...product, addedToCart: true };
-    //   }
-    //   return { ...product };
-    // });
-    // console.log(newObjArr);
-    // setProductList(newObjArr);
-    // Need to update addToCart and quantity.
-    // Focus on addToCart first
+    const newObjArr = productList.map((product) => {
+      if (product.id === props.id) {
+        return { ...product, addedToCart: true };
+      }
+      return { ...product };
+    });
+
+    setProductList(newObjArr);
   };
 
   return (

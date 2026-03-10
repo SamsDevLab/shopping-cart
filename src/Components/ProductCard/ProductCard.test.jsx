@@ -4,6 +4,10 @@ import { MemoryRouter, Routes, Route, Outlet } from "react-router";
 import userEvent from "@testing-library/user-event";
 import Shop from "../Shop/Shop";
 
+const mockSetterFn = () => {
+  return "Set Obj";
+};
+
 const mockObjArr = [
   [
     {
@@ -21,6 +25,7 @@ const mockObjArr = [
       addedToCart: false,
     },
   ],
+  mockSetterFn,
 ];
 
 const Wrapper = () => {
