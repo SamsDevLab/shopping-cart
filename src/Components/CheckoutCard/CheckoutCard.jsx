@@ -1,5 +1,5 @@
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
-// import styles from "./CheckoutCard.module.css";
+import styles from "./CheckoutCard.module.css";
 import { useOutletContext } from "react-router";
 
 const CheckoutCard = ({ props }) => {
@@ -18,12 +18,14 @@ const CheckoutCard = ({ props }) => {
   };
 
   return (
-    <div data-testid="checkout-card">
-      <img src={props.image} alt={props.title} />
+    <div className={styles.checkoutCard} data-testid="checkout-card">
+      <img className={styles.image} src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
       <h3>{props.price}</h3>
       <QuantitySelector props={props} />
-      <button onClick={() => handleRemoveFromCart()}>Trash</button>
+      <button className={styles.button} onClick={() => handleRemoveFromCart()}>
+        Trash
+      </button>
     </div>
   );
 };

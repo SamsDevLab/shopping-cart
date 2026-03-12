@@ -1,8 +1,9 @@
 import CheckoutCard from "../CheckoutCard/CheckoutCard";
 import { useOutletContext } from "react-router";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
-  const [productList, setProductList] = useOutletContext();
+  const [productList] = useOutletContext();
 
   const cartProducts = productList.filter((product) => {
     if (product.addedToCart === true) {
@@ -13,7 +14,7 @@ const Cart = () => {
   return (
     <>
       <h2>Shopping Cart</h2>
-      <div data-testid="cart-container">
+      <div className={styles.checkoutContainer} data-testid="cart-container">
         {cartProducts.length > 0 ? (
           cartProducts.map((product) => {
             return <CheckoutCard key={product.id} props={product} />;

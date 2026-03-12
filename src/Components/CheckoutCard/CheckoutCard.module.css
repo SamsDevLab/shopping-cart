@@ -1,0 +1,13 @@
+.checkoutCard {
+  display: flex;
+  max-height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  max-height: 5rem;
+}
+.button {
+  max-height: 2rem;
+}
