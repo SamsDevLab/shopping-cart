@@ -21,7 +21,7 @@ const QuantitySelector = ({ props }) => {
       if (
         product.id === props.id &&
         props.quantity >= 1 &&
-        props.quantity < 99
+        props.quantity <= 99
       ) {
         return { ...product, quantity: props.quantity + 1 };
       }
@@ -36,7 +36,7 @@ const QuantitySelector = ({ props }) => {
     const newNumber = Number(event.target.value);
 
     const newArr = productList.map((product) => {
-      if (product.id === props.id && newNumber >= 1 && newNumber < 99) {
+      if (product.id === props.id && newNumber >= 1 && newNumber <= 99) {
         return { ...product, quantity: newNumber };
       }
 
