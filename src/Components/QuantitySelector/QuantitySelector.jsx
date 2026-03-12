@@ -1,27 +1,49 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router";
 import styles from "./QuantitySelector.module.css";
 
-const QuantitySelector = () => {
-  const [inputValue, setInputValue] = useState(1);
+const QuantitySelector = ({ props }) => {
+  const [productList, setProductList] = useOutletContext();
 
   const handleDecrementChange = () => {
-    if (!(inputValue <= 1)) setInputValue(inputValue - 1);
+    const newArr = productList.map((product) => {
+      if (product.id === props.id && !(props.quantity <= 1)) {
+        return { ...product, quantity: props.quantity - 1 };
+      }
+
+      return product;
+    });
+
+    setProductList(newArr);
   };
 
   const handleIncrementChange = () => {
-    if (inputValue >= 1 && inputValue < 99) setInputValue(inputValue + 1);
+    const newArr = productList.map((product) => {
+      if (
+        product.id === props.id &&
+        props.quantity >= 1 &&
+        props.quantity < 99
+      ) {
+        return { ...product, quantity: props.quantity + 1 };
+      }
+
+      return product;
+    });
+
+    setProductList(newArr);
   };
 
   const handleInputChange = (event) => {
-    const newNum = Number(event.target.value);
-
-    if (newNum >= 0 && newNum <= 99) setInputValue(newNum);
-  };
-
-  const handleBlurEvent = (event) => {
     const newNumber = Number(event.target.value);
 
-    setInputValue(newNumber);
+    const newArr = productList.map((product) => {
+      if (product.id === props.id && newNumber >= 1 && newNumber < 99) {
+        return { ...product, quantity: newNumber };
+      }
+
+      return product;
+    });
+
+    setProductList(newArr);
   };
 
   return (
@@ -29,17 +51,16 @@ const QuantitySelector = () => {
       <label className={styles.inputLabel} htmlFor="quantity">
         Quantity
       </label>
-      <button onClick={handleDecrementChange}>-</button>
+      <button onClick={() => handleDecrementChange()}>-</button>
       <input
         type="number"
         id="quantity"
         maxLength="2"
         step="1"
         pattern="[1-9][0-9]"
-        value={inputValue}
+        value={props.quantity}
         className={styles.quantityInput}
         onChange={(event) => handleInputChange(event)}
-        onBlur={(event) => handleBlurEvent(event)}
       />
       <button onClick={handleIncrementChange}>+</button>
     </div>

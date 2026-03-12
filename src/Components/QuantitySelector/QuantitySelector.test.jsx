@@ -1,114 +1,93 @@
 import { describe, it, expect } from "vitest";
+import { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import QuantitySelector from "./QuantitySelector";
+import { MemoryRouter, Routes, Route, Outlet } from "react-router";
+import Home from "../Home/Home";
 
-const mockObj = {
-  id: 1,
-  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  price: 109.95,
-  description:
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  category: "men's clothing",
-  image: {
-    url: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-    alt: "Foldsack",
+const mockObjArr = [
+  {
+    id: 1,
+    title: "Test Obj 1",
+    price: 126.54,
+    description: "Test Obj 1 is the perfect daypack",
+    category: "outdoors",
+    image: {
+      url: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    },
+    rating: {
+      rate: 4.5,
+      count: 120,
+    },
+    addedToCart: false,
+    quantity: 2,
   },
-  rating: {
-    rate: 3.9,
-    count: 120,
-  },
+];
+
+const Wrapper = () => {
+  const [mockProductList, setMockProductList] = useState(mockObjArr);
+  return <Outlet context={[mockProductList, setMockProductList]} />;
 };
 
 describe("QuantitySelector", () => {
   it("should reduce the input value", async () => {
     render(
-      <QuantitySelector
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
+      <MemoryRouter initialEntries={["/"]}>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
     );
-    const user = userEvent.setup();
 
-    const button = screen.getByRole("button", { name: "-" });
+    const user = userEvent.setup();
+    const decrementButton = screen.getByRole("button", { name: "-" });
+
+    expect(decrementButton).toBeInTheDocument();
+
     const input = screen.getByRole("spinbutton", { name: "Quantity" });
 
-    await user.type(input, "2");
-
-    const originalInputValue = Number(input.value);
-
-    await user.click(button);
-
-    expect(Number(input.value)).toBeLessThan(originalInputValue);
+    await user.click(decrementButton);
+    expect(Number(input.value)).toEqual(1);
   });
 
   it("should increase the input value", async () => {
     render(
-      <QuantitySelector
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
+      <MemoryRouter initialEntries={["/"]}>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
     );
+
     const user = userEvent.setup();
+    const incrementButton = screen.getByRole("button", { name: "+" });
 
-    const button = screen.getByRole("button", { name: "+" });
     const input = screen.getByRole("spinbutton", { name: "Quantity" });
-    const inputValue = Number(input.value);
 
-    await user.click(button);
+    await user.click(incrementButton);
 
-    expect(Number(input.value)).toBeGreaterThan(inputValue);
+    expect(Number(input.value)).toEqual(3);
   });
 
   it("should change the input value", async () => {
     render(
-      <QuantitySelector
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
+      <MemoryRouter initialEntries={["/"]}>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>,
     );
-    const user = userEvent.setup();
 
+    const user = userEvent.setup();
     const input = screen.getByRole("spinbutton", { name: "Quantity" });
 
-    await user.clear(input);
-    await user.type(input, "2");
-
-    expect(input).toHaveValue(Number("2"));
-  });
-
-  it("should leave the typed input number after blur event", async () => {
-    render(
-      <QuantitySelector
-        title={mockObj.title}
-        price={mockObj.price}
-        description={mockObj.description}
-        category={mockObj.category}
-        image={mockObj.image}
-        rating={mockObj.rating}
-      />,
-    );
-    const user = userEvent.setup();
-
-    const input = screen.getByRole("spinbutton", { name: "Quantity" });
-
-    await user.clear(input);
-    await user.type(input, "23");
-    await user.tab();
-
-    expect(input).not.toHaveFocus();
-    expect(input).toHaveValue(Number("23"));
+    await user.type(input, "3");
+    expect(Number(input.value)).toEqual(23);
   });
 });
