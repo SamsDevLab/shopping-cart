@@ -22,7 +22,7 @@ const CheckoutCard = ({ props }) => {
       <img src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
       <h3>{props.price}</h3>
-      <QuantitySelector />
+      <QuantitySelector props={props} />
       <button onClick={() => handleRemoveFromCart()}>Trash</button>
     </div>
   );
