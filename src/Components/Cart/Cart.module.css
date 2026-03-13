@@ -1,4 +1,15 @@
 .checkoutContainer {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  min-width: 70%;
+}
+
+.summaryContainer {
+  grid-column: 2/3;
 }

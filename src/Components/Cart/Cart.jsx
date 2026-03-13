@@ -1,4 +1,5 @@
 import CheckoutCard from "../CheckoutCard/CheckoutCard";
+import OrderSummary from "../OrderSummary/OrderSummary";
 import { useOutletContext } from "react-router";
 import styles from "./Cart.module.css";
 
@@ -14,15 +15,29 @@ const Cart = () => {
   return (
     <>
       <h2>Shopping Cart</h2>
-      <div className={styles.checkoutContainer} data-testid="cart-container">
+      <section className={styles.checkoutContainer}>
         {cartProducts.length > 0 ? (
-          cartProducts.map((product) => {
-            return <CheckoutCard key={product.id} props={product} />;
-          })
+          <section className={styles.productSection}>
+            {cartProducts.map((product) => {
+              return (
+                <CheckoutCard
+                  className={styles.checkoutCard}
+                  keys={product.id}
+                  props={product}
+                />
+              );
+            })}
+          </section>
         ) : (
           <h2>No items added to your basket</h2>
         )}
-      </div>
+        <section
+          className={styles.summaryContainer}
+          data-testid="cart-container"
+        >
+          <OrderSummary className={styles.orderSummary} />
+        </section>
+      </section>
     </>
   );
 };
