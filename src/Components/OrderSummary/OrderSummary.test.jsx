@@ -2,66 +2,57 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import OrderSummary from "./OrderSummary";
 
-const mockObjArr = [
-  {
-    id: 10,
-    title: "Testing",
-    price: 50.5,
-    description: "Nice test pack",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-    rating: {
-      rate: 3.9,
-      count: 120,
-    },
-    addedToCart: true,
-    quantity: 1,
-  },
-  {
-    id: 8,
-    title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-    price: 10.99,
-    description:
-      "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-    category: "jewelery",
-    image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
-    rating: {
-      rate: 1.9,
-      count: 100,
-    },
-  },
-  {
-    id: 12,
-    title:
-      "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-    price: 114,
-    description:
-      "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-    category: "electronics",
-    image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
-    rating: {
-      rate: 4.8,
-      count: 400,
-    },
-  },
-];
+const subtotal = 175.55;
+const shipping = 10;
+const tax = 10.53;
+const total = 196.08;
 
 describe("OrderSummary", () => {
-  it("should render 5 headers", () => {
-    render(<OrderSummary />);
+  it("should render Subtotal, Shipping, Tax, and Total", () => {
+    render(
+      <OrderSummary
+        subtotal={subtotal}
+        shipping={shipping}
+        tax={tax}
+        total={total}
+      />,
+    );
 
-    const orderSummary = screen.getByRole("heading", { name: "Order Summary" });
-    const subtotal = screen.getByRole("heading", { name: "Subtotal" });
-    const shipping = screen.getByRole("heading", { name: "Shipping" });
-    const salesTax = screen.getByRole("heading", { name: "Sales Tax" });
-    const total = screen.getByRole("heading", { name: "Total" });
+    const subtotalElement = screen.getByRole("heading", {
+      name: "Subtotal",
+    });
+    const shippingElement = screen.getByRole("heading", {
+      name: "Shipping",
+    });
+    const salesTaxElement = screen.getByRole("heading", {
+      name: "Sales Tax",
+    });
+    const totalPriceElement = screen.getByRole("heading", { name: "Total" });
 
-    expect(
-      orderSummary,
-      subtotal,
-      shipping,
-      salesTax,
-      total,
-    ).toBeInTheDocument();
+    expect(subtotalElement).toBeInTheDocument();
+    expect(shippingElement).toBeInTheDocument();
+    expect(salesTaxElement).toBeInTheDocument();
+    expect(totalPriceElement).toBeInTheDocument();
+  });
+
+  it("should render the dollar values of subtotal, shippingTotal,tax, and  total", () => {
+    render(
+      <OrderSummary
+        subtotal={subtotal}
+        shipping={shipping}
+        tax={tax}
+        total={total}
+      />,
+    );
+
+    const subtotalPrice = screen.getByTestId("subtotal");
+    const shippingPrice = screen.getByTestId("shipping");
+    const taxPrice = screen.getByTestId("tax");
+    const totalPrice = screen.getByTestId("total");
+
+    expect(subtotalPrice.textContent).toBe("$175.55");
+    expect(shippingPrice.textContent).toBe("$10");
+    expect(taxPrice.textContent).toBe("$10.53");
+    expect(totalPrice.textContent).toBe("$196.08");
   });
 });

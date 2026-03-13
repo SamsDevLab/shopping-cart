@@ -1,13 +1,25 @@
 import styles from "./OrderSummary.module.css";
 
-const OrderSummary = () => {
+const OrderSummary = ({ subtotal, shipping, tax, total }) => {
   return (
-    <section data-testid="order-summary">
+    <section className={styles.orderSummary} data-testid="order-summary">
       <h2>Order Summary</h2>
-      <h3>Subtotal</h3>
-      <h3>Shipping</h3>
-      <h3>Sales Tax</h3>
-      <h3>Total</h3>
+      <div className={styles.summaryContainer}>
+        <h3>Subtotal</h3>
+        <p data-testid="subtotal">${subtotal}</p>
+      </div>
+      <div className={styles.summaryContainer}>
+        <h3>Shipping</h3>
+        <p data-testid="shipping">${shipping}</p>
+      </div>
+      <div className={styles.summaryContainer}>
+        <h3>Sales Tax </h3>
+        <p data-testid="tax">${tax}</p>
+      </div>
+      <div className={styles.summaryContainer}>
+        <h3>Total</h3>
+        <p data-testid="total">${total}</p>
+      </div>
     </section>
   );
 };

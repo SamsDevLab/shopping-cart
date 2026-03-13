@@ -1,0 +1,15 @@
+.orderSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-right: 3rem;
+  background-color: #e7e1d6;
+  min-width: 17.5vw;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.summaryContainer {
+  display: flex;
+  justify-content: space-between;
+}
