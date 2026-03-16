@@ -1,11 +1,16 @@
 .cardContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+
   gap: 1rem;
-  min-height: 15rem;
-  max-width: 15rem;
   background-color: #e7e1d6;
   border-radius: 0.3rem;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+.image {
+  max-height: 12rem;
+  justify-self: center;
+  max-height: 10rem;
 }
