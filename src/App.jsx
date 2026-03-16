@@ -18,11 +18,16 @@ function App() {
 
     fetchedResults.then((response) => {
       const newArr = response.map((product) => {
-        const newPrice = product.price.toFixed(2);
+        delete product.description;
+
+        const capitalizedStr = product.category
+          .split(" ")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
 
         const newObj = {
           ...product,
-          price: newPrice,
+          category: capitalizedStr,
           addedToCart: false,
           quantity: 1,
         };
