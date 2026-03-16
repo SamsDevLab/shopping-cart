@@ -5,6 +5,11 @@ import { useOutletContext } from "react-router";
 const CheckoutCard = ({ props }) => {
   const [productList, setProductList] = useOutletContext();
 
+  const truncatedTitle =
+    props.title.charAt(0).toUpperCase() + props.title.slice(1, 30) + "...";
+
+  const adjustedPrice = props.price.toFixed(2);
+
   const handleRemoveFromCart = () => {
     const newObjArr = productList.map((product) => {
       if (product.id === props.id) {
@@ -20,8 +25,8 @@ const CheckoutCard = ({ props }) => {
   return (
     <div className={styles.checkoutCard} data-testid="checkout-card">
       <img className={styles.image} src={props.image} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h3>${props.price}</h3>
+      <h2>{truncatedTitle}</h2>
+      <h3>${adjustedPrice}</h3>
       <QuantitySelector props={props} />
       <button className={styles.button} onClick={() => handleRemoveFromCart()}>
         Trash
