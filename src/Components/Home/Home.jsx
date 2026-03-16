@@ -4,15 +4,23 @@ import { useOutletContext } from "react-router";
 
 const Home = () => {
   const [productList] = useOutletContext();
-  const favoriteProducts = productList.filter((product) => {
-    if (product.rating.rate >= 4.5) {
-      return product;
-    }
-  });
+  const favoriteProducts = productList
+    .filter((product) => {
+      if (product.rating.rate >= 4.5) {
+        return product;
+      }
+    })
+    .map((product) => {
+      const truncatedTitle =
+        product.title.charAt(0).toUpperCase() +
+        product.title.slice(1, 30) +
+        "...";
+      return { ...product, title: truncatedTitle };
+    });
 
   return (
-    <>
-      <h2 className={styles.homeHeader}>Greetings from Sam's Shop</h2>
+    <section className={styles.homeContainer}>
+      <h2 className={styles.homeHeader}>Shop by Sam's Dev Lab</h2>
       <p>Top Rated Items</p>
       <section
         className={styles.cardContainer}
@@ -28,7 +36,7 @@ const Home = () => {
           );
         })}
       </section>
-    </>
+    </section>
   );
 };
 
