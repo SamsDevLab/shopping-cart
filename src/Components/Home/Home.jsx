@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { useOutletContext } from "react-router";
 
 const Home = () => {
-  const [productList, setProductList] = useOutletContext();
+  const [productList] = useOutletContext();
   const favoriteProducts = productList.filter((product) => {
     if (product.rating.rate >= 4.5) {
       return product;
@@ -14,7 +14,10 @@ const Home = () => {
     <>
       <h2 className={styles.homeHeader}>Greetings from Sam's Shop</h2>
       <p>Top Rated Items</p>
-      <div data-testid="home-card-container">
+      <section
+        className={styles.cardContainer}
+        data-testid="home-card-container"
+      >
         {favoriteProducts.map((product) => {
           return (
             <ProductCard
@@ -24,7 +27,7 @@ const Home = () => {
             />
           );
         })}
-      </div>
+      </section>
     </>
   );
 };
