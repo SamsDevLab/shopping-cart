@@ -18,8 +18,11 @@ function App() {
 
     fetchedResults.then((response) => {
       const newArr = response.map((product) => {
+        const newPrice = product.price.toFixed(2);
+
         const newObj = {
           ...product,
+          price: newPrice,
           addedToCart: false,
           quantity: 1,
         };
@@ -29,8 +32,6 @@ function App() {
       setProductList(newArr);
     });
   }, []);
-
-  // console.log(productList);
 
   return (
     <>
