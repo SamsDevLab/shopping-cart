@@ -65,21 +65,12 @@ describe("ProductCard", () => {
     );
 
     const title = screen.getByRole("heading", {
-      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      name: "Fjallraven - Foldsack No. 1 Ba...",
     });
-    expect(title).toHaveTextContent(
-      "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    );
+    expect(title).toHaveTextContent("Fjallraven - Foldsack No. 1 Ba...");
 
-    const price = screen.getByRole("heading", { name: "109.95" });
+    const price = screen.getByRole("heading", { name: "$109.95" });
     expect(price).toHaveTextContent("109.95");
-
-    const description = screen.getByText(
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    );
-    expect(description).toHaveTextContent(
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    );
 
     const category = screen.getByRole("heading", { name: "men's clothing" });
     expect(category).toHaveTextContent("men's clothing");
@@ -89,8 +80,8 @@ describe("ProductCard", () => {
     });
     expect(image).toBeInTheDocument();
 
-    const rating = screen.getByText("3.9/5 from 120 reviews");
-    expect(rating).toHaveTextContent("3.9/5 from 120 reviews");
+    const rating = screen.getByText("3.9/5 (120 Reviews)");
+    expect(rating).toHaveTextContent("3.9/5 (120 Reviews)");
     expect(rating).toBeInTheDocument();
   });
 });

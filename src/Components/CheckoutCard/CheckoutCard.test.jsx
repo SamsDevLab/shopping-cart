@@ -42,7 +42,7 @@ describe("CheckoutCard", () => {
     const image = screen.getByRole("img", { name: "Testing" });
     expect(image).toBeInTheDocument();
 
-    const title = screen.getByRole("heading", { name: "Testing" });
+    const title = screen.getByRole("heading", { name: "Testing..." });
     expect(title).toBeInTheDocument();
 
     const trashButton = screen.getByText("Trash");

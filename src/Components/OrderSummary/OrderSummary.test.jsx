@@ -51,7 +51,7 @@ describe("OrderSummary", () => {
     const totalPrice = screen.getByTestId("total");
 
     expect(subtotalPrice.textContent).toBe("$175.55");
-    expect(shippingPrice.textContent).toBe("$10");
+    expect(shippingPrice.textContent).toBe("$10.00");
     expect(taxPrice.textContent).toBe("$10.53");
     expect(totalPrice.textContent).toBe("$196.08");
   });
