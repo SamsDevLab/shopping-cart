@@ -23,7 +23,7 @@ const ProductCard = ({ props }) => {
     <div data-testid="product-card" className={styles.cardContainer}>
       <img src={props.image} alt={props.title} />
       <h2>{props.title}</h2>
-      <h3>{props.price}</h3>
+      <h3>${props.price}</h3>
       <h4>{props.category}</h4>
       <p>{props.description}</p>
       <p>
