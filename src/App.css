@@ -20,15 +20,11 @@ nav {
 main {
   display: flex;
   flex-direction: column;
-  /* justify-content: start; */
-  /* align-items: center; */
-  margin: 2rem;
-  min-width: 90vw;
-  min-height: 70vh;
+  justify-self: center;
+  margin: 1rem;
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 2rem;
-  /* background-color: #e7e1d6; */
 }
 
 footer {

@@ -1,12 +1,14 @@
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import { useOutletContext } from "react-router";
+import styles from "./Shop.module.css";
 
 const Shop = () => {
-  const [productList, setProductList] = useOutletContext([]);
+  const [productList] = useOutletContext([]);
 
   return (
     <>
-      <div data-testid="card-container">
+      <h2>Shop</h2>
+      <div className={styles.cardContainer} data-testid="card-container">
         {productList.map((product) => {
           return (
             <ProductCard
