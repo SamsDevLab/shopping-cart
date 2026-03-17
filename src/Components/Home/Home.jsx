@@ -2,14 +2,20 @@ import styles from "./Home.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useOutletContext } from "react-router";
 import spaceLandscapeExtraCropped from "./space-landscape-extra-cropped.jpg";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [productList] = useOutletContext();
   const favoriteProducts = productList.filter((product) => {
     if (product.rating.rate >= 4.5) {
       return product;
     }
   });
+
+  const handleNavigateToShopPage = () => {
+    navigate("shop");
+  };
 
   return (
     <section className={styles.homeContainer}>
@@ -20,7 +26,7 @@ const Home = () => {
           alt="space landscape"
         />
         <h2>Quality Goods. No Nonsense.</h2>
-        <button>Shop All Products</button>
+        <button onClick={handleNavigateToShopPage}>Shop All Products</button>
       </section>
       <h3 className={styles.favoritesHeader}>Customer Favorites</h3>
       <section
