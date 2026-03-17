@@ -6,8 +6,8 @@ const Shop = () => {
   const [productList] = useOutletContext([]);
 
   return (
-    <>
-      <h2>Shop</h2>
+    <section className={styles.shopContainer}>
+      <h2>All Products</h2>
       <div className={styles.cardContainer} data-testid="card-container">
         {productList.map((product) => {
           return (
@@ -19,7 +19,7 @@ const Shop = () => {
           );
         })}
       </div>
-    </>
+    </section>
   );
 };
 

@@ -1,3 +1,14 @@
+.shopContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+  gap: 1rem;
+}
+
+.shopContainer h2 {
+  font-size: 1.25rem;
+}
+
 .cardContainer {
   display: grid;
   gap: 1rem;
