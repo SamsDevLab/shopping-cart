@@ -19,6 +19,12 @@
   padding-right: 0.2rem;
 }
 
+.quantityButton:hover {
+  cursor: pointer;
+  background-color: #d1d5db;
+  border-radius: 0.2rem;
+}
+
 .quantityInput::-webkit-outer-spin-button,
 .quantityInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
