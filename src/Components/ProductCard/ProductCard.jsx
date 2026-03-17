@@ -35,7 +35,9 @@ const ProductCard = ({ props }) => {
         {props.rating.rate}/5 ({props.rating.count} Reviews)
       </p>
       <QuantitySelector props={props} />
-      <button onClick={() => handleAddingToCart()}>{addToCartStr}</button>
+      <button className={styles.button} onClick={() => handleAddingToCart()}>
+        {addToCartStr}
+      </button>
     </div>
   );
 };

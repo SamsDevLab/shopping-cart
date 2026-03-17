@@ -2,10 +2,10 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-
   gap: 1rem;
-  background-color: #e7e1d6;
+  background-color: #ffffff;
   border-radius: 0.3rem;
+  border: 2px solid #e5e7eb;
   padding: 1.5rem;
 }
 
@@ -13,4 +13,16 @@
   max-height: 12rem;
   justify-self: center;
   max-height: 10rem;
+}
+
+.button {
+  background-color: #f59e0b;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+  color: #111827;
+}
+
+.button:hover {
+  background-color: #fbbf24;
+  cursor: pointer;
 }
