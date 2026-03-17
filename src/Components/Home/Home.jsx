@@ -1,6 +1,7 @@
 import styles from "./Home.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useOutletContext } from "react-router";
+import spaceLandscapeExtraCropped from "./space-landscape-extra-cropped.jpg";
 
 const Home = () => {
   const [productList] = useOutletContext();
@@ -12,8 +13,16 @@ const Home = () => {
 
   return (
     <section className={styles.homeContainer}>
-      <h2 className={styles.homeHeader}>Shop by Sam's Dev Lab</h2>
-      <p>Top Rated Items</p>
+      <section className={styles.heroImageContainer}>
+        <img
+          className={styles.spaceImage}
+          src={spaceLandscapeExtraCropped}
+          alt="space landscape"
+        />
+        <h2>Quality Goods. No Nonsense.</h2>
+        <button>Shop All Products</button>
+      </section>
+      <h3 className={styles.favoritesHeader}>Customer Favorites</h3>
       <section
         className={styles.cardContainer}
         data-testid="home-card-container"

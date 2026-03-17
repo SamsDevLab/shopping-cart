@@ -4,9 +4,50 @@
 }
 
 .homeContainer {
-  min-width: 100vw;
+  max-width: 65vw;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.heroImageContainer {
+  position: relative;
+}
+
+.spaceImage {
+  max-width: 64.5vw;
+  border-radius: 0.5rem;
+}
+
+.heroImageContainer h2 {
+  color: #ffffff;
+  position: absolute;
+  font-size: 2.25rem;
+  top: 27.5%;
+  left: 25%;
+}
+
+.heroImageContainer button {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background-color: #f59e0b;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.heroImageContainer button:hover {
+  background-color: #fbbf24;
+  cursor: pointer;
+}
+
+.favoritesHeader {
+  align-self: start;
+  font-size: 1.25rem;
+  margin-top: 1rem;
 }
 
 .cardContainer {
