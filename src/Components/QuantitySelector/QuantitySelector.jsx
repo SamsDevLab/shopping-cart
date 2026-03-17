@@ -48,10 +48,12 @@ const QuantitySelector = ({ props }) => {
 
   return (
     <div>
-      <label className={styles.inputLabel} htmlFor="quantity">
-        Quantity
-      </label>
-      <button onClick={() => handleDecrementChange()}>-</button>
+      <button
+        className={styles.quantityButton}
+        onClick={() => handleDecrementChange()}
+      >
+        -
+      </button>
       <input
         type="number"
         id="quantity"
@@ -62,7 +64,9 @@ const QuantitySelector = ({ props }) => {
         className={styles.quantityInput}
         onChange={(event) => handleInputChange(event)}
       />
-      <button onClick={handleIncrementChange}>+</button>
+      <button className={styles.quantityButton} onClick={handleIncrementChange}>
+        +
+      </button>
     </div>
   );
 };

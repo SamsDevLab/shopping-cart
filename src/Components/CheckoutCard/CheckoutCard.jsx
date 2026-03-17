@@ -6,7 +6,7 @@ const CheckoutCard = ({ props }) => {
   const [productList, setProductList] = useOutletContext();
 
   const truncatedTitle =
-    props.title.charAt(0).toUpperCase() + props.title.slice(1, 30) + "...";
+    props.title.charAt(0).toUpperCase() + props.title.slice(1, 40) + "...";
 
   const adjustedPrice = props.price.toFixed(2);
 

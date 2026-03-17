@@ -1,5 +1,11 @@
-.inputLabel {
-  display: block;
+.quantityInput {
+  max-width: 2.25rem;
+  padding-left: 0.2rem;
+}
+
+.quantityButton {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 .quantityInput::-webkit-outer-spin-button,
