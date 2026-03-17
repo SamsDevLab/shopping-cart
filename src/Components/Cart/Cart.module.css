@@ -1,16 +1,24 @@
-.checkoutContainer {
-  min-width: 80vw;
+.cartContainer {
+  max-width: 61vw;
+  min-width: 61vw;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cartContainer > h2 {
+  font-size: 1.25rem;
+}
+
+.checkoutContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .productSection {
   display: flex;
   flex-direction: column;
+  justify-content: start;
   gap: 3.25rem;
-  min-width: 70%;
-}
-
-.summaryContainer {
-  grid-column: 2/3;
 }

@@ -41,7 +41,7 @@ const Cart = () => {
   const total = subtotal + shipping + salesTax;
 
   return (
-    <>
+    <section className={styles.cartContainer}>
       <h2>Shopping Cart</h2>
       <section className={styles.checkoutContainer}>
         {cartProducts.length > 0 ? (
@@ -50,29 +50,20 @@ const Cart = () => {
             data-testid="cart-container"
           >
             {cartProducts.map((product) => {
-              return (
-                <CheckoutCard
-                  className={styles.checkoutCard}
-                  key={product.id}
-                  props={product}
-                />
-              );
+              return <CheckoutCard key={product.id} props={product} />;
             })}
           </section>
         ) : (
           <h2>No items added to your basket</h2>
         )}
-        <section className={styles.summaryContainer}>
-          <OrderSummary
-            className={styles.orderSummary}
-            subtotal={subtotal}
-            shipping={shipping}
-            tax={salesTax}
-            total={total}
-          />
-        </section>
+        <OrderSummary
+          subtotal={subtotal}
+          shipping={shipping}
+          tax={salesTax}
+          total={total}
+        />
       </section>
-    </>
+    </section>
   );
 };
 
