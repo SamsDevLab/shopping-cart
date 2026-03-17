@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <header>
-        <h1>Sam's Great Outdoors</h1>
+        <h1>Orion Supply</h1>
         <nav>
           <Link to="/" className="link">
             Home
@@ -59,8 +59,7 @@ function App() {
       </main>
       <footer>
         <div className="title-and-mission">
-          <h2>Sam's Great Outdoors</h2>
-          <p>It ain't gonna make you proficient - but it will help.</p>
+          <h2>Orion Supply</h2>
         </div>
         <div className="all-links">
           <h2>Links</h2>

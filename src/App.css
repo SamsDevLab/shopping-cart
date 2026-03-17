@@ -1,6 +1,6 @@
 header {
-  background-color: #e7e1d6;
-  color: #2b2b2b;
+  color: #ffffff;
+  background-color: #0f3460;
   min-width: 100vw;
   min-height: 5rem;
   display: flex;
@@ -14,21 +14,25 @@ nav {
 }
 
 .link {
-  color: #5c5c5c;
+  color: #e6edf5;
+  font-family: "Lora";
+}
+
+.link:hover {
+  color: #f59e0b;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-self: center;
-  margin: 1rem;
   gap: 1rem;
-  border-radius: 0.5rem;
   padding: 2rem;
+  background-color: #f5f7fa;
 }
 
 footer {
-  background-color: #e7e1d6;
+  background-color: #0f3460;
+  color: #e6edf5;
   min-width: 100vw;
   min-height: 10rem;
   display: flex;
