@@ -48,6 +48,9 @@ const QuantitySelector = ({ props }) => {
 
   return (
     <div>
+      <label className={styles.quantityLabel} htmlFor="quantity">
+        Quantity
+      </label>
       <button
         className={styles.quantityButton}
         onClick={() => handleDecrementChange()}
