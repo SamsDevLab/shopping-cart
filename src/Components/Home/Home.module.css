@@ -4,7 +4,7 @@
 }
 
 .homeContainer {
-  max-width: 65vw;
+  max-width: 61vw;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,6 @@
 }
 
 .spaceImage {
-  max-width: 64.5vw;
   border-radius: 0.5rem;
 }
 
