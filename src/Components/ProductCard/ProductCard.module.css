@@ -17,8 +17,9 @@
 
 .button {
   background-color: #f59e0b;
+  border: none;
   border-radius: 0.2rem;
-  padding: 0.2rem;
+  padding: 0.4rem;
   color: #111827;
 }
 
