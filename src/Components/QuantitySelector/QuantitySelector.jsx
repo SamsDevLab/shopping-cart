@@ -33,6 +33,8 @@ const QuantitySelector = ({ props }) => {
   };
 
   const handleInputChange = (event) => {
+    if (event.target.value.includes(".")) return;
+
     const newNumber = Number(event.target.value);
 
     const newArr = productList.map((product) => {
