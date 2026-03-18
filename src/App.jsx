@@ -1,7 +1,12 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { Outlet } from "react-router";
+import homeLogo from "./assets/svgs/home.svg";
+import shopLogo from "./assets/svgs/shop.svg";
+import cartLogo from "./assets/svgs/cart.svg";
+import emailLogo from "./assets/svgs/email.svg";
+import phoneLogo from "./assets/svgs/phone.svg";
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -43,15 +48,24 @@ function App() {
       <header>
         <h1>Orion Supply</h1>
         <nav>
-          <Link to="/" className="link">
-            Home
-          </Link>
-          <Link to="shop" className="link">
-            Shop
-          </Link>
-          <Link to="cart" className="link">
-            Cart
-          </Link>
+          <div className={styles.headerLinkDiv}>
+            <img src={homeLogo} alt="Home" />
+            <Link to="/" className={styles.link}>
+              Home
+            </Link>
+          </div>
+          <div className={styles.headerLinkDiv}>
+            <img src={shopLogo} alt="Shop" />
+            <Link to="shop" className={styles.link}>
+              Shop
+            </Link>
+          </div>
+          <div className={styles.headerLinkDiv}>
+            <img src={cartLogo} alt="Cart" />
+            <Link to="cart" className={styles.link}>
+              Cart
+            </Link>
+          </div>
         </nav>
       </header>
       <main>
@@ -61,27 +75,36 @@ function App() {
         <div className="title-and-mission">
           <h2>Orion Supply</h2>
         </div>
-        <div className="all-links">
+        <div className={styles.allLinks}>
           <h2>Links</h2>
-          <Link to="/" className="link">
-            Home
-          </Link>
-          <Link to="shop" className="link">
-            Shop
-          </Link>
-          <Link to="cart" className="link">
-            Cart
-          </Link>
-        </div>
-        <div className="contact-info">
-          <h2>Contact Us</h2>
-          <div className="email">
-            {/* <img src="" alt="" /> */}
-            <h3>Email: justgonnasendit@fakecompany.com</h3>
+          <div className={styles.footerLinkDiv}>
+            <img src={homeLogo} alt="Home" />
+            <Link to="/" className={styles.link}>
+              Home
+            </Link>
           </div>
-          <div className="phone">
-            {/* <img src="" alt="" /> */}
-            <h3>Phone: 555.555.5555</h3>
+          <div className={styles.footerLinkDiv}>
+            <img src={shopLogo} alt="Shop" />
+            <Link to="shop" className={styles.link}>
+              Shop
+            </Link>
+          </div>
+          <div className={styles.footerLinkDiv}>
+            <img src={cartLogo} alt="Cart" />
+            <Link to="cart" className={styles.link}>
+              Cart
+            </Link>
+          </div>
+        </div>
+        <div className={styles.contactInfo}>
+          <h2>Contact Us</h2>
+          <div className={styles.communicationDiv}>
+            <img src={emailLogo} alt="email" />
+            <h3>sendit@fakeco.com</h3>
+          </div>
+          <div className={styles.communicationDiv}>
+            <img src={phoneLogo} alt="phone" />
+            <h3>555.555.5555</h3>
           </div>
         </div>
       </footer>

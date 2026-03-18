@@ -21,10 +21,12 @@ nav {
 .link {
   color: #ffffff;
   font-family: "Lora";
+  text-decoration: none;
 }
 
 .link:hover {
   color: #f59e0b;
+  text-decoration: underline;
 }
 
 main {
@@ -52,7 +54,30 @@ footer h2 {
   font-size: 1.25rem;
 }
 
-.all-links {
+.contactInfo {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
+
+.communicationDiv {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.allLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.headerLinkDiv {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.footerLinkDiv {
+  display: flex;
+  gap: 0.5rem;
+  justify-items: center;
 }
