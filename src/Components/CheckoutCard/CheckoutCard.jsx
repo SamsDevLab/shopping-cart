@@ -1,6 +1,7 @@
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import styles from "./CheckoutCard.module.css";
 import { useOutletContext } from "react-router";
+import trashIcon from "../../assets/svgs/trash.svg";
 
 const CheckoutCard = ({ props }) => {
   const [productList, setProductList] = useOutletContext();
@@ -29,7 +30,7 @@ const CheckoutCard = ({ props }) => {
       <h3>${adjustedPrice}</h3>
       <QuantitySelector props={props} />
       <button className={styles.button} onClick={() => handleRemoveFromCart()}>
-        Trash
+        <img src={trashIcon} alt="Trash" />
       </button>
     </div>
   );
