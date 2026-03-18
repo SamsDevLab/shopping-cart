@@ -7,6 +7,7 @@
   border-radius: 0.3rem;
   border: 2px solid #e5e7eb;
   padding: 1.5rem;
+  color: #0a2540;
 }
 
 .image {
@@ -20,7 +21,7 @@
   border: none;
   border-radius: 0.2rem;
   padding: 0.4rem;
-  color: #111827;
+  color: #0a2540;
 }
 
 .button:hover {
