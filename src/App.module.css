@@ -18,6 +18,26 @@ nav {
   gap: 1rem;
 }
 
+.headerLinkDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.cartCount {
+  background-color: #f59e0b;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: -0.9rem;
+  left: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .link {
   color: #ffffff;
   font-family: "Lora";
@@ -68,12 +88,6 @@ footer h2 {
 .allLinks {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-}
-
-.headerLinkDiv {
-  display: flex;
-  align-items: center;
   gap: 0.2rem;
 }
 

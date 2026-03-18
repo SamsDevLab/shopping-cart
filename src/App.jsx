@@ -43,6 +43,14 @@ function App() {
     });
   }, []);
 
+  const productsInCart = productList
+    .map((product) => {
+      if (product.addedToCart === true) {
+        return 1;
+      } else return 0;
+    })
+    .reduce((acc, current) => acc + current, 0);
+
   return (
     <>
       <header>
@@ -62,6 +70,9 @@ function App() {
           </div>
           <div className={styles.headerLinkDiv}>
             <img src={cartLogo} alt="Cart" />
+            {productsInCart > 0 ? (
+              <span className={styles.cartCount}>{productsInCart}</span>
+            ) : null}
             <Link to="cart" className={styles.link}>
               Cart
             </Link>
