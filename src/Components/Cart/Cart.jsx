@@ -1,10 +1,15 @@
 import CheckoutCard from "../CheckoutCard/CheckoutCard";
 import OrderSummary from "../OrderSummary/OrderSummary";
-import { useOutletContext } from "react-router";
+import { useOutletContext, useNavigate } from "react-router";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
   const [productList] = useOutletContext();
+  const navigate = useNavigate();
+
+  const handleNavigateToShopPage = () => {
+    navigate("/shop");
+  };
 
   const cartProducts = productList.filter((product) => {
     if (product.addedToCart === true) {
@@ -54,7 +59,15 @@ const Cart = () => {
             })}
           </section>
         ) : (
-          <h2>No items added to your basket</h2>
+          <div className={styles.noItemsContainer}>
+            <h2>No items added to your basket</h2>
+            <button
+              onClick={handleNavigateToShopPage}
+              className={styles.continueButton}
+            >
+              Continue Shopping
+            </button>
+          </div>
         )}
         <OrderSummary
           subtotal={subtotal}

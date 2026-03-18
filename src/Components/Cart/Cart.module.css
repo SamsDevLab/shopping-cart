@@ -10,6 +10,25 @@
   font-size: 1.25rem;
 }
 
+.noItemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.continueButton {
+  background-color: #f59e0b;
+  border: none;
+  border-radius: 0.2rem;
+  max-width: 10rem;
+  padding: 0.5rem;
+}
+
+.continueButton:hover {
+  background-color: #fbbf24;
+  cursor: pointer;
+}
+
 .checkoutContainer {
   display: flex;
   gap: 2rem;
