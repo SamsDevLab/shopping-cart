@@ -9,6 +9,7 @@ const OrderSummary = ({ subtotal, shipping, tax, total }) => {
   return (
     <section className={styles.orderSummary} data-testid="order-summary">
       <h2>Order Summary</h2>
+      <hr />
       <div className={styles.summaryContainer}>
         <h3>Subtotal</h3>
         <p data-testid="subtotal">${subtotalStr}</p>
@@ -21,10 +22,14 @@ const OrderSummary = ({ subtotal, shipping, tax, total }) => {
         <h3>Sales Tax </h3>
         <p data-testid="tax">${taxStr}</p>
       </div>
+      <hr />
       <div className={styles.summaryContainer}>
-        <h3>Total</h3>
-        <p data-testid="total">${totalStr}</p>
+        <h3 className={styles.total}>Total</h3>
+        <p className={styles.total} data-testid="total">
+          ${totalStr}
+        </p>
       </div>
+      <button className={styles.checkoutButton}>Checkout </button>
     </section>
   );
 };
