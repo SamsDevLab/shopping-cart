@@ -72,7 +72,7 @@ function App() {
         <Outlet context={[productList, setProductList]} />
       </main>
       <footer>
-        <div className="title-and-mission">
+        <div>
           <h2>Orion Supply</h2>
         </div>
         <div className={styles.allLinks}>
