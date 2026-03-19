@@ -1,7 +1,6 @@
 import styles from "./Home.module.css";
 import ProductCard from "../ProductCard/ProductCard";
 import { useOutletContext } from "react-router";
-import spaceLandscapeExtraCropped from "./space-landscape-extra-cropped.jpg";
 import { useNavigate } from "react-router";
 
 const Home = () => {
@@ -20,11 +19,6 @@ const Home = () => {
   return (
     <section className={styles.homeContainer}>
       <section className={styles.heroImageContainer}>
-        <img
-          className={styles.spaceImage}
-          src={spaceLandscapeExtraCropped}
-          alt="space landscape"
-        />
         <h2>Quality Goods. No Nonsense.</h2>
         <button onClick={handleNavigateToShopPage}>Shop All Products</button>
       </section>
