@@ -77,12 +77,3 @@ const QuantitySelector = ({ props }) => {
 };
 
 export default QuantitySelector;
-
-/* 
-  Edge cases to address: 
-  • Can add (multiple) 0s -before- the number
-  • Can add a decimal after the first number
-  • May be able to handle this with a blur event or adding to the cart - or both
-  • Separate edge case: when you backspace in the input it will result in 0 rather than a blank space
-  • Will need to write tests for these as well
-  */
