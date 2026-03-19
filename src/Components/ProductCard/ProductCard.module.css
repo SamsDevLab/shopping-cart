@@ -12,8 +12,8 @@
 
 .image {
   max-height: 12rem;
+  min-height: 12rem;
   justify-self: center;
-  max-height: 10rem;
 }
 
 .button {
