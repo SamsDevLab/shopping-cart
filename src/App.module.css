@@ -93,7 +93,59 @@ footer h2 {
 }
 
 .footerLinkDiv {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
   justify-items: start;
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+}
+
+@media (max-width: 575px) and (min-width: 320px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  footer {
+    flex-direction: column;
+    max-height: none;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  footer > h2 {
+    font-size: 2rem;
+  }
+
+  .allLinks h2,
+  .contactInfo h2 {
+    font-size: 1.75rem;
+  }
+
+  .allLinks,
+  .contactInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footerLinkDiv,
+  .communicationDiv {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footerLinkDiv img,
+  .communicationDiv img {
+    max-height: 2rem;
+  }
 }

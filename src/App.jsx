@@ -83,9 +83,7 @@ function App() {
         <Outlet context={[productList, setProductList]} />
       </main>
       <footer>
-        <div>
-          <h2>Orion Supply</h2>
-        </div>
+        <h2>Orion Supply</h2>
         <div className={styles.allLinks}>
           <h2>Links</h2>
           <div className={styles.footerLinkDiv}>
