@@ -41,6 +41,7 @@
   .orderSummary {
     min-width: 35vw;
     max-width: 35vw;
+    align-self: center;
   }
 
   .orderSummary h2 {
