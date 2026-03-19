@@ -94,18 +94,8 @@ footer h2 {
 
 .footerLinkDiv {
   display: flex;
-  /* grid-template-columns: repeat(2, 1fr); */
   justify-items: start;
   gap: 1rem;
-}
-
-@media (max-width: 1200px) and (min-width: 1025px) {
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-}
-
-@media (max-width: 767px) and (min-width: 576px) {
 }
 
 @media (max-width: 575px) and (min-width: 320px) {
