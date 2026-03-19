@@ -29,7 +29,11 @@ const CheckoutCard = ({ props }) => {
       <h2>{truncatedTitle}</h2>
       <h3>${adjustedPrice}</h3>
       <QuantitySelector props={props} />
-      <button className={styles.button} onClick={() => handleRemoveFromCart()}>
+      <button
+        data-testid="trash-button"
+        className={styles.button}
+        onClick={() => handleRemoveFromCart()}
+      >
         <img src={trashIcon} alt="Trash" />
       </button>
     </div>

@@ -45,7 +45,7 @@ describe("CheckoutCard", () => {
     const title = screen.getByRole("heading", { name: "Testing..." });
     expect(title).toBeInTheDocument();
 
-    const trashButton = screen.getByText("Trash");
+    const trashButton = screen.getByTestId("trash-button");
     expect(trashButton).toBeInTheDocument();
   });
 
@@ -62,12 +62,12 @@ describe("CheckoutCard", () => {
 
     const user = userEvent.setup();
 
-    const trashButton = screen.getByRole("button", { name: "Trash" });
+    const trashButton = screen.getByTestId("trash-button");
     expect(trashButton).toBeInTheDocument();
 
     await user.click(trashButton);
 
-    const deletedTrashButton = screen.queryByRole("button", { name: "Trash" });
+    const deletedTrashButton = screen.queryByTestId("trash-button");
     expect(deletedTrashButton).not.toBeInTheDocument();
   });
 });
