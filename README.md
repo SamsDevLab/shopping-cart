@@ -1,16 +1,67 @@
-# React + Vite
+# 🛒 Mock Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mock shopping cart and store front built for The Odin Project curriculum
 
-Currently, two official plugins are available:
+## 👨‍💻 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React Router
+- React Testing Library
+- Vite
+- Vitest
+- CSS Modules
+- npm
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Single Page Application (SPA) built with React Router
+- Component testing using React Testing Library
+- Automatically calculates total price of items in the cart
+- Shortcut buttons in Home and Cart that navigate to the Shop page
+- Responsive design for use on Desktop, Laptop, Tablet and Mobile
 
-## Expanding the ESLint configuration
+## 👨‍🎓 What I Learned
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- How to test frontend components utilizing React Testing Library
+- How to mock a fetch request
+- How to mimic routing in tests using MemoryRouter
+- How to route an SPA using React Router
+- How to employ useOutletContext hook to consume Outlet context and share state with components
+- How to employ CSS modules to scope local styles
+
+## 🏃‍♂️ To Run
+
+1. Clone Repo
+
+```
+git clone https://github.com/SamsDevLab/shopping-cart.git
+cd shopping-cart
+```
+
+2. Ensure npm is installed
+
+```
+npm install
+```
+
+3. Run npm dev server
+
+```
+npm run dev
+```
+
+4. Open Vite Dev Server at [Local Host Server](http://localhost:5173/) in your browser
+
+## Screenshots
+
+### Desktop View
+
+![alt text](public/screenshots/desktop-view.png)
+
+### Tablet View
+
+![alt text](public/screenshots/tablet-view.png)
+
+### Mobile View
+
+![alt text](public/screenshots/mobile-view.png)
