@@ -103,6 +103,8 @@ footer h2 {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+    min-height: 25vh;
+    max-height: 25vh;
   }
 
   footer {
@@ -118,14 +120,14 @@ footer h2 {
 
   .allLinks h2,
   .contactInfo h2 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .allLinks,
   .contactInfo {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .footerLinkDiv,
@@ -136,6 +138,6 @@ footer h2 {
 
   .footerLinkDiv img,
   .communicationDiv img {
-    max-height: 2rem;
+    max-height: 1.5rem;
   }
 }
