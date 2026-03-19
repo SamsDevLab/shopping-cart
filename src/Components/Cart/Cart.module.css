@@ -43,3 +43,28 @@
   justify-content: start;
   gap: 3.25rem;
 }
+
+@media (max-width: 1200px) and (min-width: 320px) {
+  .cartContainer {
+    align-items: center;
+  }
+
+  .noItemsContainer {
+    align-items: center;
+  }
+
+  .checkoutContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) and (min-width: 320px) {
+  .noItemsContainer h2 {
+    font-size: 0;
+  }
+
+  .noItemsContainer h2::after {
+    font-size: 1rem;
+    content: "No items in basket";
+  }
+}

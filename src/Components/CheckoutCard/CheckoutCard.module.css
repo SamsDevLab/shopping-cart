@@ -21,3 +21,17 @@
   background-color: #fbbf24;
   cursor: pointer;
 }
+
+@media (max-width: 767px) and (min-width: 320px) {
+  .checkoutCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .image {
+    max-height: 10rem;
+    max-width: 10rem;
+  }
+}
