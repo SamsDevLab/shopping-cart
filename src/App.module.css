@@ -2,8 +2,7 @@ header {
   color: #ffffff;
   background-color: #0a2540;
   min-width: 100vw;
-  max-height: 15vh;
-  min-height: 15vh;
+  padding: 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -52,9 +51,8 @@ nav {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 65vh;
   gap: 1rem;
-  padding: 2rem;
+  padding: 4rem;
   align-items: center;
   background-color: #f5f7fa;
   color: #0a2540;
@@ -65,10 +63,8 @@ footer {
   color: #e6edf5;
   display: flex;
   min-width: 100vw;
-  max-height: 20vh;
-  min-height: 20vh;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 footer h2 {
