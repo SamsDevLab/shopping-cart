@@ -8,6 +8,7 @@
   border-radius: 0.5rem;
   background-color: #ffffff;
   border: 2px solid #e5e7eb;
+  color: #0a2540;
 }
 
 .orderSummary h2 {
@@ -31,6 +32,7 @@
   border: none;
   border-radius: 0.2rem;
   padding: 0.4rem;
+  color: #0a2540;
 }
 
 .checkoutButton:hover {

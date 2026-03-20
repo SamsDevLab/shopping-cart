@@ -1,6 +1,7 @@
 .quantityInput {
   max-width: 2.25rem;
   padding-left: 0.2rem;
+  color: #0a2540;
 }
 
 .quantityLabel {
@@ -16,6 +17,7 @@
 
 .quantityButton {
   padding: 0 0.4rem 0 0.4rem;
+  color: #0a2540;
 }
 
 .quantityButton:hover {
