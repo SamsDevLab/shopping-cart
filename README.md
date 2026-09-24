@@ -2,6 +2,10 @@
 
 Mock shopping cart and store front built for The Odin Project curriculum
 
+## 🚀 Live Deployment
+
+https://shopping-cart-mu-seven-42.vercel.app/
+
 ## 👨‍💻 Technologies
 
 - React
